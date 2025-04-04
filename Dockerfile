@@ -18,6 +18,8 @@ RUN apt-get update && apt-get install -y \
     libharfbuzz-subset0 \
     && rm -rf /var/lib/apt/lists/*
 
+RUN python3 -m pip install --upgrade pip
+
 # Copy backend code and requirements
 COPY backend_server/requirements.txt ./
 RUN pip install -r requirements.txt
